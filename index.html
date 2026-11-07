@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Schadewijzer marktonderzoek</title>
+  <meta name="description" content="Marktonderzoek en uitgewerkt idee voor een onafhankelijke schadewijzer voor autoschadeherstel in Nederland (november 2026).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --vlak: #ffffff;
+      --tekst: #1c1b19;
+      --zacht: #5d5a54;
+      --lijn: #e4e0d8;
+      --accent: #c2410c;
+      --accent-zacht: #fff1e8;
+      --kop-tabel: #f3f0ea;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #161514;
+        --vlak: #201f1d;
+        --tekst: #ece9e4;
+        --zacht: #a9a49b;
+        --lijn: #34322e;
+        --accent: #fb923c;
+        --accent-zacht: #2c1d13;
+        --kop-tabel: #2a2825;
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #161514;
+      --vlak: #201f1d;
+      --tekst: #ece9e4;
+      --zacht: #a9a49b;
+      --lijn: #34322e;
+      --accent: #fb923c;
+      --accent-zacht: #2c1d13;
+      --kop-tabel: #2a2825;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--tekst);
+      font: 17px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .pagina { max-width: 860px; margin: 0 auto; padding: 56px 16px 80px; }
+    header .kicker {
+      font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 12px;
+    }
+    h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; line-height: 1.2; text-wrap: balance; }
+    h1 { font-size: clamp(34px, 6vw, 52px); margin: 0 0 20px; letter-spacing: -.01em; }
+    h2 { font-size: clamp(25px, 4vw, 32px); margin: 64px 0 16px; padding-top: 8px; border-top: 1px solid var(--lijn); padding-top: 32px; }
+    h3 { font-size: 21px; margin: 40px 0 12px; }
+    p { margin: 0 0 18px; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    strong { font-weight: 650; }
+    .samenvatting {
+      background: var(--vlak); border: 1px solid var(--lijn); border-left: 4px solid var(--accent);
+      border-radius: 10px; padding: 22px 24px; margin: 28px 0 32px; font-size: 16.5px;
+    }
+    .samenvatting ul { margin: 0; padding-left: 20px; }
+    .samenvatting li { margin: 0 0 10px; }
+    .samenvatting li:last-child { margin: 0; }
+    .samenvatting .label { font-size: 13px; font-weight: 600; color: var(--zacht); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+    .cijfers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 0 0 36px; }
+    .cijfer { background: var(--vlak); border: 1px solid var(--lijn); border-radius: 10px; padding: 16px; }
+    .cijfer b { display: block; font-family: "Source Serif 4", Georgia, serif; font-size: 30px; line-height: 1.1; color: var(--accent); margin-bottom: 6px; }
+    .cijfer span { font-size: 14px; color: var(--zacht); line-height: 1.4; display: block; }
+    nav.inhoud { background: var(--vlak); border: 1px solid var(--lijn); border-radius: 10px; padding: 18px 24px; }
+    nav.inhoud .label { font-size: 13px; font-weight: 600; color: var(--zacht); text-transform: uppercase; letter-spacing: .06em; }
+    nav.inhoud ol { margin: 10px 0 0; padding-left: 20px; }
+    nav.inhoud li { margin: 4px 0; }
+    nav.inhoud a { text-decoration: none; color: var(--tekst); }
+    nav.inhoud a:hover { color: var(--accent); }
+    .tabel { overflow-x: auto; margin: 8px 0 26px; border: 1px solid var(--lijn); border-radius: 10px; background: var(--vlak); }
+    table { border-collapse: collapse; width: 100%; font-size: 14.5px; line-height: 1.5; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--lijn); min-width: 120px; }
+    th { background: var(--kop-tabel); font-weight: 600; }
+    tbody tr:last-child td { border-bottom: 0; }
+    em { font-style: italic; }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--lijn); color: var(--zacht); font-size: 14px; }
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .pagina { padding-top: 36px; }
+      .cijfers { grid-template-columns: repeat(2, 1fr); }
+      .cijfer b { font-size: 25px; }
+      .samenvatting { padding: 18px; }
+      th, td { padding: 9px 11px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="pagina">
+    <header>
+      <p class="kicker">Marktonderzoek · schadeherstel-app · november 2026</p>
+      <h1>Begin bij de polis, meet de wachttijd</h1>
+    </header>
+
+    <section class="samenvatting">
+      <div class="label">In het kort</div>
+      <ul>
+        <li><strong>De informatie staat niet op de websites.</strong> Van de 64 bekeken sites noemt maar een kwart van de zelfstandigen en 9% van de ketenvestigingen duidelijk bij welke verzekeraars ze zijn aangesloten. Precies één bedrijf noemt een wachttijd.</li>
+        <li><strong>De polis beslist, niet het schadebedrijf.</strong> Dekking en vervangend vervoer hangen af van je polis en het herstelnetwerk van je verzekeraar. Herstel je daarbuiten, dan betaal je €265 tot €600 extra, of krijg je niets vergoed.</li>
+        <li><strong>Alleen de wachttijd hoort echt bij het bedrijf</strong>, en die publiceert niemand, ook geen verzekeraar. Een leenauto krijg je meestal pas als er aan je auto gewerkt wordt.</li>
+        <li><strong>Het idee: draai de vraag om.</strong> Eerst je verzekeraar en dekking, dan wat herstel buiten het netwerk kost, en dan de bedrijven in de buurt met de wachttijd die gebruikers melden.</li>
+        <li><strong>Zelf te vullen</strong> uit KvK, OpenStreetMap, vestigingslijsten van ketens en een eigen crawler: naar schatting 110 tot 190 uur tot een landelijke eerste versie. Begin als website in één regio.</li>
+        <li><strong>Let op:</strong> 60% van de schades wordt al gestuurd door verzekeraars, Googles AI-overzicht stelt dezelfde vragen, en het moet nog juridisch getoetst worden of een polischeck onder de Wft valt.</li>
+      </ul>
+    </section>
+
+    <section class="cijfers" aria-label="Kerncijfers">
+      <div class="cijfer"><b>64</b><span>websites van schadebedrijven bekeken</span></div>
+      <div class="cijfer"><b>1</b><span>daarvan noemt een wachttijd tot de start van het herstel</span></div>
+      <div class="cijfer"><b>€265–600</b><span>extra eigen risico bij herstel buiten het netwerk van je verzekeraar</span></div>
+      <div class="cijfer"><b>60%</b><span>van de schades wordt nu al door verzekeraar of lease gestuurd</span></div>
+    </section>
+
+    <nav class="inhoud" aria-label="Inhoud">
+      <div class="label">Inhoud</div>
+      <ol>
+        <li><a href="#zes-op-de-tien-schades-zijn-gestuurd-voordat-iemand-gaat-zoeken">Zes op de tien schades zijn gestuurd voordat iemand gaat zoeken</a></li>
+        <li><a href="#websites-beantwoorden-de-drie-vragen-bijna-nooit">Websites beantwoorden de drie vragen bijna nooit</a></li>
+        <li><a href="#de-polis-beslist-over-dekking-en-leenauto-de-hersteller-alleen-over-de-wachttijd">De polis beslist over dekking en leenauto, de hersteller alleen over de wachttijd</a></li>
+        <li><a href="#zelf-vullen-kan-maar-niet-door-verzekeraarszoekers-leeg-te-trekken">Zelf vullen kan, maar niet door verzekeraarszoekers leeg te trekken</a></li>
+        <li><a href="#het-idee-een-schadewijzer-die-bij-je-polis-begint">Het idee: een schadewijzer die bij je polis begint</a></li>
+        <li><a href="#conclusie">Conclusie</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <h2 id="zes-op-de-tien-schades-zijn-gestuurd-voordat-iemand-gaat-zoeken">Zes op de tien schades zijn gestuurd voordat iemand gaat zoeken</h2>
+<p>De Nederlandse markt voor autoschadeherstel is goed voor <strong>ruwweg €1,2 tot 1,5 miljard omzet</strong> en telt naar schatting <strong>1.100 tot 1.700 echte herstelbedrijven</strong>; een precies aantal kent zelfs de ACM niet (<a href="https://www.acm.nl/sites/default/files/documents/2019-10/marktstudie-de-rol-van-verzekeraars-op-de-autoschadeherstelmarkt.pdf" target="_blank" rel="noopener">ACM, 2019</a>; <a href="https://mijn.bovag.nl/actueel/verhalen/fusie-bovag-en-focwa-groot-in-schadeherstel" target="_blank" rel="noopener">Mijn BOVAG, 2023</a>). Het aantal krimpt: in 2020 stonden er circa 1.700 schadebedrijven bij de KvK ingeschreven, tegen ongeveer 3.000 &quot;jaren geleden&quot; (<a href="https://www.autoschadeportaal.nl/aantal-schadebedrijven-neemt-snel-af/" target="_blank" rel="noopener">Autoschadeportaal, 2020</a>). De consolidatie versnelt door internationale kopers. Het Zweedse Werksta voert sinds november 2026 alle 13 Nederlandse vestigingen onder eigen naam, en eind 2025 waren er circa 5 partijen met vrijwel landelijke dekking en 20 met sterke regionale dekking (<a href="https://www.automotive-online.nl/management/schade/2026/11/05/laatste-drie-abs-vestigingen-in-nederland-gaan-nu-ook-verder-onder-naam-werksta/" target="_blank" rel="noopener">Automotive Online, 5-11-2026</a>; <a href="https://www.aeternuscompany.nl/kennis/internationals-betreden-de-werkplaats-nieuwe-consolidatiefase-voor-nederlandse-schadeherstelmarkt/" target="_blank" rel="noopener">Aeternus, 2025</a>). Elke klus is veel waard: KPMG verwacht dat het gemiddelde schadebedrag stijgt van ruim €2.200 naar ongeveer <strong>€3.400 in 2030</strong> (<a href="https://www.automotive-online.nl/management/2024/04/11/kpmg-aantal-schades-neemt-af-aandeel-gestuurde-schadestroom-stijgt/" target="_blank" rel="noopener">Automotive Online, 2024</a>).</p>
+<p>De consument kiest steeds minder zelf. Verzekeraars kopen herstel vooraf in en sturen hun klanten met financiële prikkels naar geselecteerde bedrijven, zoals een lager eigen risico, directe betaling of gratis vervangend vervoer (<a href="https://www.acm.nl/sites/default/files/documents/2019-10/marktstudie-de-rol-van-verzekeraars-op-de-autoschadeherstelmarkt.pdf" target="_blank" rel="noopener">ACM, 2019</a>). KPMG schat dit gestuurde deel op <strong>60 procent van de schadestroom, oplopend naar 67 tot 82 procent in 2030</strong>, vooral door meer leaseauto&#39;s en door Directe Schadeafhandeling (<a href="https://www.automotive-online.nl/management/2024/04/11/kpmg-aantal-schades-neemt-af-aandeel-gestuurde-schadestroom-stijgt/" target="_blank" rel="noopener">Automotive Online, 2024</a>). BOVAG en het Verbond van Verzekeraars pleitten in april 2026 bovendien voor een digitale intake &quot;zodat er efficiënter kan worden gestuurd&quot; en de auto direct bij het juiste bedrijf staat (<a href="https://aftersalesmagazine.nl/wp-content/uploads/2026/04/2026.BVG_.022-BOVAG-Duurzaam-Autoschadeherstel-v06-LoRes.pdf" target="_blank" rel="noopener">Manifest Duurzaam Autoschadeherstel, 2026</a>). Voor een onafhankelijke verzamelplek blijven drie groepen over: mensen met onverzekerde schade (alleen WA, schade onder het eigen risico, no-claim beschermen), mensen die bewust buiten het netwerk willen herstellen, en mensen die binnen het netwerk van hun eigen verzekeraar nog een bedrijf moeten kiezen. Die laatste groep is groter dan ze lijkt. Sturing bepaalt meestal het netwerk, niet de vestiging, en één netwerk telt al snel honderden bedrijven.</p>
+<p>Eerdere pogingen om consumenten te bedienen zijn grotendeels mislukt. Deukweg beloofde vanaf 2014 minstens drie offertes binnen 24 uur en verdiende, net als Fixico en Schadekiek, aan een commissie die het herstelbedrijf betaalde (<a href="https://mtsprout.nl/groei/apps-storten-zich-op-autoschade" target="_blank" rel="noopener">MT/Sprout</a>). Bij een controle op 7 november 2026 reageerde deukweg.nl niet meer en was schadekiek.nl een gokspampagina. Fixico haalde onder meer €12 miljoen op in 2021 (<a href="https://trendsinautoleasing.nl/nieuws/laatste-nieuws/12024056-fixico-haalt-12-miljoen-op-voor-verdere-groei/" target="_blank" rel="noopener">Trends in Autoleasing, 2021</a>), maar werkt in Nederland nu alleen nog voor lease, verhuur en verzekeraars; consumenten bedient het alleen in België (<a href="https://fixico.com/nl" target="_blank" rel="noopener">fixico.com/nl</a>; <a href="https://fixico.be/nl" target="_blank" rel="noopener">fixico.be</a>). Wat nog voor consumenten bestaat, zoals Zibal en de schadeherstelservice van Centraal Beheer, draait om offertes en prijs (<a href="https://offerte.zibal.nl/over-ons" target="_blank" rel="noopener">Zibal</a>; <a href="https://www.centraalbeheer.nl/verzekeringen/autoverzekering/schadeherstelservice" target="_blank" rel="noopener">Centraal Beheer</a>). Geen enkel platform beantwoordt de drie vragen samen. In het buitenland overleefden vooral marktplaatsen voor onderhoud en reparatie met een grote partner: Autobutler kreeg PSA als meerderheidsaandeelhouder (<a href="https://techcrunch.com/2016/07/27/carmaker-psa-group-acquires-majority-stake-in-european-auto-repair-marketplace-autobutler" target="_blank" rel="noopener">TechCrunch, 2016</a>) en FixMyCar ruilde de vergoeding per klus in voor abonnementen (<a href="https://www.am-online.com/news/fixmycar-scraps-per-job-garage-fees-for-subscriptions" target="_blank" rel="noopener">AM Online</a>). Het Duitse Caroobi, dat de hele uitvoering zelf regelde, liep op tot €8,5 miljoen jaarverlies en werd in 2020 verkocht (<a href="https://www.deutsche-startups.de/2020/06/09/caroobi-zahlencheck-2018/" target="_blank" rel="noopener">deutsche-startups.de, 2020</a>). Prijsvergelijken via offertes werkte niet in een gestuurde markt, maar de informatielaag daarboven is leeg.</p>
+<p>De feitelijke concurrent is Google. Bij 19 zoekopdrachten als &quot;autoschadeherstel [plaats]&quot; stond bovenaan vrijwel steeds een kaartblok met drie bedrijven, waarin ABS 9 keer voorkwam. Op 6 van de 19 pagina&#39;s verscheen een AI-overzicht dat zelf doorvraagt naar de verzekering of naar vervangend vervoer; in Zwolle bood het aan uit te zoeken welk bedrijf het best bij je verzekeraar past (<a href="https://www.google.nl/search?q=schadeherstel+zwolle&hl=nl&gl=nl" target="_blank" rel="noopener">Google, Zwolle</a>; <a href="https://www.google.nl/search?q=autoschadeherstel+nijmegen&hl=nl&gl=nl" target="_blank" rel="noopener">Google, Nijmegen</a>). Advertenties stonden op maar 2 van de 19 pagina&#39;s, al ging het om één meting op een zaterdagavond. Een nieuwe dienst moet dus duidelijk beter zijn dan een gratis AI-antwoord dat zijn kennis half uit dezelfde vage websites haalt.</p>
+<h2 id="websites-beantwoorden-de-drie-vragen-bijna-nooit">Websites beantwoorden de drie vragen bijna nooit</h2>
+<p>De onderzoekers bekeken 23 vestigingspagina&#39;s van zeven ketens (ABS, Schadenet, ASN, Autoschade Herstel Groep, Van Mossel, Broekhuis en Hedin) en 41 websites van zelfstandige of bij een formule aangesloten herstellers, verspreid over het land. Per vraag is gescoord of de informatie duidelijk, vaag of afwezig was.</p>
+<div class="tabel"><table><thead><tr>
+<th></th>
+<th>Ketens: 23 vestigingspagina&#39;s</th>
+<th>Zelfstandigen: 41 websites</th>
+</tr>
+</thead><tbody><tr>
+<td>Verzekeraar of netwerk duidelijk</td>
+<td>2 (9%)</td>
+<td>10 (24%)</td>
+</tr>
+<tr>
+<td>Snelheid duidelijk</td>
+<td>2 (9%, alleen voor de intake)</td>
+<td>6 (15%)</td>
+</tr>
+<tr>
+<td>Vervangend vervoer duidelijk</td>
+<td>0 (0%)</td>
+<td>15 (37%)</td>
+</tr>
+<tr>
+<td>Wachttijd tot start herstel genoemd</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Online agenda met echte tijdsloten</td>
+<td>2 (ASN, voor de intake)</td>
+<td>2 (Microsoft Bookings, voor de intake)</td>
+</tr>
+</tbody></table></div>
+<p>De standaardzin over verzekeraars is &quot;wij werken voor alle verzekeraars&quot;. Dat zegt niets over waar het de klant om gaat: zit dit bedrijf in de sturing van míjn verzekeraar, zodat ik geen extra eigen risico betaal en een leenauto krijg? Van de ketens publiceert alleen ASN een echte partnerlijst, met circa 36 verzekeraars en per verzekeraar een pagina met de vestigingen die voor hen herstellen (<a href="https://www.asnautoschade.nl/verzekeringspartners" target="_blank" rel="noopener">ASN</a>). ABS noemt op zijn algemene pagina opdrachtgevers als Allianz, ANWB, Centraal Beheer, Interpolis, Schadegarant en Univé, maar niet per vestiging (<a href="https://www.absautoherstel.nl/over-abs/" target="_blank" rel="noopener">ABS</a>). Bij zelfstandigen staan namen vaak alleen als logo&#39;s, en die zijn soms verouderd: ATH in Duiven toont onder meer Delta Lloyd en Generali, merken die niet meer zelfstandig bestaan (<a href="https://athduiven.nl/verzekeringen/verzekeringsmaatschappijen" target="_blank" rel="noopener">ATH</a>). Leden van een netwerk als AAS, AHG of ABS waren vaker duidelijk (6 van 11) dan bedrijven zonder netwerk (4 van 30). Eén site, HC Repairs, rekent voor wat niet-gestuurd herstel kost: mogelijk geen gratis vervoer, een eigen risico tot €600, of een uitkering zonder btw of van maar 50 tot 75 procent (<a href="https://hcrepairs.nl/verzekerde-schade-wa-en-all-risk/" target="_blank" rel="noopener">HC Repairs</a>).</p>
+<p>Over snelheid zwijgen de sites vrijwel helemaal. Geen enkele ketenpagina noemt een wachttijd tot de start van het herstel; bij de zelfstandigen doet alleen Autoschade Nijmegen dat, met &quot;Herstel in 2-4 weken&quot; (<a href="https://www.schade-nijmegen.nl" target="_blank" rel="noopener">Autoschade Nijmegen</a>). Echte beschikbaarheid die je zonder persoonsgegevens kunt zien, bestaat alleen voor de intake. ASN heeft een online agenda met tijdsloten (<a href="https://www.asnautoschade.nl/vestiging/asn-autoschade-kreijne-amersfoort" target="_blank" rel="noopener">ASN Amersfoort</a>), en Lambert in Eindhoven en Van den Berg in Zeeland gebruiken Microsoft Bookings, waar op zaterdag 7 november de eerste vrije intake op maandag 9 en vrijdag 13 november lag (<a href="https://outlook.office365.com/owa/calendar/EindhovenIntakeGesprek@autoschadelambert.nl/bookings/" target="_blank" rel="noopener">Lambert</a>; <a href="https://www.vandenbergschadeherstel.nl/service/autoschade/autoschade/" target="_blank" rel="noopener">Van den Berg</a>). De afspraakapp van ABS toont &quot;agenda-momenten&quot; pas na het invullen van e-mailadres en kenteken, en dan als voorkeursdatum die de vestiging nog moet bevestigen (<a href="https://afspraak.absautoherstel.nl/abs-autoherstel?establishment-asp-id=39" target="_blank" rel="noopener">ABS-app</a>). Van Mossel vraagt een gewenste datum en neemt later contact op over &quot;de reparatieduur&quot; (<a href="https://www.vanmossel.nl/schade/afspraak-plannen" target="_blank" rel="noopener">Van Mossel</a>). De echte wachttijd duikt alleen op in reviews, zoals &quot;5 weken gewacht op start reparatie&quot; bij Van Mossel Groningen (<a href="https://www.vanmossel.nl/vestigingen/van-mossel-autoschade-groningen" target="_blank" rel="noopener">Van Mossel Groningen</a>). BOVAG sprak in januari 2026 van &quot;al snel twee weken wachttijd, met uitschieters naar anderhalve maand&quot; (<a href="https://topgear.nl/autonieuws/komende-weken-wil-je-echt-geen-schades-oplopen-door-drukte/" target="_blank" rel="noopener">Top Gear NL, 2026</a>). Carglass laat zien dat het anders kan, met een keuze &quot;Eerste mogelijkheid&quot;, een wachtlijst en een check van je verzekering (<a href="https://www.carglass.nl/afspraak-maken" target="_blank" rel="noopener">Carglass</a>). Geen enkele schadehersteller biedt dat.</p>
+<p>&quot;Gratis vervangend vervoer&quot; is de meest gebruikte belofte van de branche, maar de voorwaarden ontbreken bijna altijd. Ketens schrijven &quot;passend vervangend vervoer&quot; en verwijzen naar het contract van verzekeraar of leasemaatschappij. Schadenet belooft een auto met energielabel A of B &quot;in de klasse conform de afspraken met uw verzekeraar&quot; (<a href="https://www.schadenet.nl/vervangend-vervoer/" target="_blank" rel="noopener">Schadenet</a>), en Louwman spreekt zichzelf tegen met &quot;altijd gratis&quot; bovenaan en tarieven per vestiging in de veelgestelde vragen (<a href="https://www.louwman.nl/schade" target="_blank" rel="noopener">Louwman</a>). Van de zelfstandigen noemen er 6 van de 41 het type auto, en maar een handvol de echte voorwaarden. Van Bolhuis in Groningen rekent €25 per dag exclusief btw voor een leenauto met 100 kilometer per dag (<a href="https://www.schadeherstelgroningen.nl/leenauto-of-elektrische-leenfiets" target="_blank" rel="noopener">Van Bolhuis</a>), en Autoschade Nijmegen toont zijn vloot, met onder meer Mazda 2&#39;s en Kia Stonics met automaat (<a href="https://www.schade-nijmegen.nl/gratis-vervangend-vervoer/" target="_blank" rel="noopener">Autoschade Nijmegen</a>).</p>
+<p>Wat websites wel betrouwbaar leveren, zijn adres, telefoon, openingstijden (op 21 van de 23 ketenpagina&#39;s), reviewcijfers, keurmerken en of je online schade kunt melden. Machineleesbare gegevens zijn schaars: 8 van de 41 zelfstandigen hebben schema.org-gegevens met een bedrijfstype, en geen enkele site legt verzekeraars, wachttijd of vervangend vervoer gestructureerd vast. Een hoge Google-score zegt niets over de informatie. Negen van de 41 sites gaven op geen van de drie vragen iets, onder wie bedrijven met een 4,9 en een 5,0. Wie alleen websites leest, krijgt dus een onvolledige en snel verouderende dataset voor precies de drie vragen die ertoe doen.</p>
+<h2 id="de-polis-beslist-over-dekking-en-leenauto-de-hersteller-alleen-over-de-wachttijd">De polis beslist over dekking en leenauto, de hersteller alleen over de wachttijd</h2>
+<p>Het vermoeden van de oprichter klopt grotendeels. Of schade gedekt is, volgt uit de dekkingsvorm: WA dekt alleen schade die je een ander toebrengt, WA+ (beperkt casco) ook schade aan je eigen auto door bijvoorbeeld storm, brand, diefstal of een ruit, en allrisk ook schade door eigen schuld, zoals parkeerschade (<a href="https://www.consumentenbond.nl/autoverzekering/soorten-autoverzekering" target="_blank" rel="noopener">Consumentenbond</a>). Vervangend vervoer hangt bij vrijwel elke verzekeraar aan twee voorwaarden tegelijk: de juiste dekking én herstel bij een bedrijf uit het netwerk van díe verzekeraar. Centraal Beheer is daarin het duidelijkst. Wie buiten het netwerk herstelt, betaalt €600 extra eigen risico en heeft geen recht op vervangend vervoer (<a href="https://www.centraalbeheer.nl/verzekeringen/autoverzekering/schadeherstellers" target="_blank" rel="noopener">Centraal Beheer</a>; <a href="https://www.centraalbeheer.nl/verzekeringen/autoverzekering/vervangend-vervoer" target="_blank" rel="noopener">Centraal Beheer, vervangend vervoer</a>). De verschillen per verzekeraar zijn groot.</p>
+<div class="tabel"><table><thead><tr>
+<th>Verzekeraar</th>
+<th>Netwerk</th>
+<th>Gevolg van herstel buiten het netwerk</th>
+<th>Vervangend vervoer</th>
+<th>Bron</th>
+</tr>
+</thead><tbody><tr>
+<td>Centraal Beheer</td>
+<td>Eigen Achmea-netwerk, meer dan 1.000 herstellers</td>
+<td>€600 extra eigen risico en geen vervangend vervoer</td>
+<td>Alleen met WA+ of allrisk en in het netwerk, max. 30 dagen</td>
+<td><a href="https://www.centraalbeheer.nl/verzekeringen/autoverzekering/vervangend-vervoer" target="_blank" rel="noopener">Centraal Beheer</a></td>
+</tr>
+<tr>
+<td>FBTO</td>
+<td>Eigen netwerk (Achmea)</td>
+<td>€600 extra eigen risico, tenzij optie &quot;Eigen keuze herstelbedrijf&quot;</td>
+<td>Alleen in het netwerk, max. 30 kalenderdagen</td>
+<td><a href="https://www.fbto.nl/documenten/Voorwaarden_Autoverzekering.pdf" target="_blank" rel="noopener">FBTO, dec. 2025</a></td>
+</tr>
+<tr>
+<td>Univé</td>
+<td>Univé SchadeService, ruim 300 bedrijven</td>
+<td>Zonder aanvullende optie geen vergoeding</td>
+<td>Met optie eigen keuze max. 10 dagen à €30</td>
+<td><a href="https://www.unive.nl/autoverzekering/veelgestelde-vragen/geldt-er-een-eigen-risico-bij-autoschade" target="_blank" rel="noopener">Univé</a></td>
+</tr>
+<tr>
+<td>Nationale-Nederlanden</td>
+<td>Schadegarant</td>
+<td>€400 extra eigen risico</td>
+<td>Volgens Schadegarant kosteloos, niet bij ruitschade</td>
+<td><a href="https://www.nn.nl/particulier/verzekeren/autoverzekering.htm" target="_blank" rel="noopener">NN</a></td>
+</tr>
+<tr>
+<td>a.s.r.</td>
+<td>Schadegarant</td>
+<td>Vergoeding €500 lager, tenzij optie &quot;Vrije keuze herstel&quot;</td>
+<td>Niet uitgewerkt op de verzekeringskaart</td>
+<td><a href="https://kuiperverzekeringen.nl/storage/app/media/verzekeringkaarten/asr-2024/ASR-Verzekeringskaart-Autoverzekeing-WA-en-allrisk-versie-9.pdf" target="_blank" rel="noopener">a.s.r.</a></td>
+</tr>
+<tr>
+<td>Allianz Direct</td>
+<td>Topherstel (o.a. ABS, Schadenet, AAS)</td>
+<td>€500 eigen bijdrage bij carrosserieschade</td>
+<td>Tijdens reparatie bij Topherstel, niet bij ruit</td>
+<td><a href="https://www.allianzdirect.nl/dam/documents/auto/voorwaarden_03.pdf" target="_blank" rel="noopener">Allianz Direct</a></td>
+</tr>
+<tr>
+<td>ANWB</td>
+<td>Geselecteerde herstellers</td>
+<td>€350 eigen risico</td>
+<td>Gratis tijdens de reparatie bij een aangesloten hersteller</td>
+<td><a href="https://www.anwb.nl/verzekeringen/autoverzekering/eigen-risico" target="_blank" rel="noopener">ANWB</a></td>
+</tr>
+<tr>
+<td>InShared</td>
+<td>Eigen herstelbedrijven</td>
+<td>€265 extra eigen risico</td>
+<td>Bij een InShared-herstelbedrijf, ook als je zelf betaalt</td>
+<td><a href="https://www.inshared.nl/documenten/download/voorwaarden-autoverzekering.pdf" target="_blank" rel="noopener">InShared, okt. 2026</a></td>
+</tr>
+<tr>
+<td>Promovendum</td>
+<td>Samenwerkende herstelbedrijven</td>
+<td>€500 eigen risico</td>
+<td>Alleen tijdens de reparatie; wachten op onderdelen telt niet</td>
+<td><a href="https://www.promovendum.nl/sites/default/files/docs/Verzekeringsvoorwaarden-autoverzekering-P25-AUT-01-toegankelijk_0.html" target="_blank" rel="noopener">Promovendum</a></td>
+</tr>
+</tbody></table></div>
+<p>Achter die merken zitten grofweg vijf netwerkfamilies: Schadegarant (een stichting van verzekeraars met 13 deelnemers, waaronder NN, OHRA, a.s.r., ABN AMRO en Klaverblad), het eigen netwerk van Achmea voor Centraal Beheer, Interpolis en FBTO, Univé SchadeService, Topherstel van Allianz, en eigen selecties van onder meer ANWB, InShared en Promovendum (<a href="https://www.schadegarant.nl/over-ons/deelnemende-verzekeraars/" target="_blank" rel="noopener">Schadegarant</a>; <a href="https://www.overstappen.nl/autoverzekering/autoschade/schadegarant/" target="_blank" rel="noopener">Overstappen.nl, 2026</a>). Een telling via de openbare zoekfunctie van Schadegarant gaf op 7 november 2026 <strong>559 carrosserieherstellers en 353 ruitspecialisten</strong>, dealers niet meegerekend (<a href="https://www.schadegarant.nl/wp-json/exchange/v1/bedrijven?schadetype=Carrosserie&merk=Overig&sort=name" target="_blank" rel="noopener">Schadegarant</a>). Veel herstellers zitten in meerdere netwerken tegelijk. Met een koppeling van ongeveer 20 verzekeraarsmerken aan 5 tot 7 netwerken dekt een eerste versie al een groot deel van de particuliere markt. Let wel: het voordeel van een netwerk is geen netwerkregel maar een regel per verzekeraar. Schadegarant zegt zelf dat je &quot;geen, of een verlaagd&quot; eigen risico betaalt, &quot;afhankelijk van uw polisvoorwaarden&quot; (<a href="https://www.schadegarant.nl/consument-voordelen/" target="_blank" rel="noopener">Schadegarant</a>).</p>
+<p>Vraag 1 en vraag 3 zijn zo in de praktijk één beslisboom met een vaste volgorde. Eerst: is het een lease- of zakelijke auto? Dan bepaalt de leasemaatschappij netwerk en vervoer, zoals bij Ayvens (<a href="https://www.ayvens.com/nl-nl/mijn-leaseauto/pech-en-schade/schadeherstel/" target="_blank" rel="noopener">Ayvens</a>). Dan: is een ander aansprakelijk? Dan betaalt de WA-verzekeraar van de tegenpartij, of sinds 1 juli 2021 via Directe Schadeafhandeling je eigen verzekeraar, die je in de praktijk weer naar het eigen netwerk leidt (<a href="https://www.verzekeraars.nl/media/8251/bedrijfsregeling-directe-schadeafhandeling.pdf" target="_blank" rel="noopener">Verbond, DSA</a>; <a href="https://www.anwb.nl/verzekeringen/autoverzekering/directe-schadeafhandeling" target="_blank" rel="noopener">ANWB, DSA</a>). Daarna volgen verzekeraar, product en dekking, of er een vrije-keuze-optie op de polis staat, en of het om ruit- of carrosserieschade gaat; bij alleen ruitschade geldt vrijwel nergens vervangend vervoer (<a href="https://www.schadegarant.nl/consument-voordelen/" target="_blank" rel="noopener">Schadegarant</a>). Er dient zich ook een vierde vraag aan: kan dit bedrijf mijn merk herstellen? Univé telt 88 automerken op de Nederlandse markt, waarvan 16 in de afgelopen vijf jaar zijn ingestapt, en waarschuwt dat het herstelnetwerk achterloopt met onderdelen en bevoegde herstellers (<a href="https://www.unive.nl/actueel/zorgen-over-herstelvoorziening-nieuwe-automerken" target="_blank" rel="noopener">Univé, 2026</a>).</p>
+<p>De regels zijn grotendeels openbaar. Directe verzekeraars publiceren hun voorwaarden als pdf met versiecode, zoals FBTO (december 2025) en InShared (1 oktober 2026), en de korte verzekeringskaart heeft een vaste opbouw die leden van het Verbond moeten gebruiken (<a href="https://www.fbto.nl/documenten/Voorwaarden_Autoverzekering.pdf" target="_blank" rel="noopener">FBTO</a>; <a href="https://www.inshared.nl/documenten/download/voorwaarden-autoverzekering.pdf" target="_blank" rel="noopener">InShared</a>; <a href="https://www.verzekeraars.nl/media/5000/regeling-verzekeringskaarten-regeling-juni-2018.pdf" target="_blank" rel="noopener">Verbond, 2018</a>). Moneyview scoort polisvoorwaarden al op criteria als &quot;recht op vervangend vervoer tijdens reparatie door een niet-gecontracteerd schadeherstelbedrijf&quot;, en is daarmee een mogelijke betaalde databron (<a href="https://download.moneyview.nl/specialitem/2026/07_Auto/Criteria%20ProductRating%20Autoverzekeringen%20VC%202026.pdf" target="_blank" rel="noopener">Moneyview, 2026</a>). Het exacte antwoord voor één persoon blijft buiten bereik. Product, versie, gekozen eigen risico en opties staan alleen op het polisblad, en Univé, Interpolis, Centraal Beheer en NN verwijzen voor persoonlijke voorwaarden naar hun ingelogde omgeving. Een onafhankelijke check bestaat nog niet; er zijn alleen algemene uitlegpagina&#39;s en zoekers per verzekeraar (<a href="https://www.consumentenbond.nl/autoverzekering/overzicht/autoschade" target="_blank" rel="noopener">Consumentenbond</a>). Hoe duur een vergissing is, toont een Kifid-uitspraak van augustus 2026. Een consument zocht &quot;via internet&quot; een &quot;erkend schadebedrijf&quot;, liet daar herstellen en betaalde <strong>€500 eigen risico</strong> omdat het geen Schadegarant-bedrijf was; zijn tussenpersoon moest dat vergoeden wegens schending van de zorgplicht (<a href="https://www.kifid.nl/media/ztkpzdbm/uitspraak-2026-0813-bindend.pdf" target="_blank" rel="noopener">Kifid 2026-0813</a>).</p>
+<p>De wachttijd is het enige stuk dat echt bij de hersteller ligt, en precies daar zit de pijn. Vervangend vervoer geldt meestal alleen tijdens de reparatie zelf, niet tijdens het wachten ervoor (<a href="https://www.geld.nl/autoverzekering/nieuws/wat-doe-je-bij-autoschade-door-winterweer" target="_blank" rel="noopener">Geld.nl, 2026</a>). Schadegarant geeft kosteloos vervoer pas &quot;zodra er daadwerkelijk aan de auto gewerkt wordt&quot; (<a href="https://www.schadegarant.nl/consument-voordelen/" target="_blank" rel="noopener">Schadegarant</a>), en bij Promovendum telt wachten op onderdelen niet mee (<a href="https://www.promovendum.nl/sites/default/files/docs/Verzekeringsvoorwaarden-autoverzekering-P25-AUT-01-toegankelijk_0.html" target="_blank" rel="noopener">Promovendum</a>). Tegelijk willen verzekeraars vervangend vervoer minder standaard aanbieden: &quot;Vervangend vervoer? Niet altijd nodig&quot; (<a href="https://aftersalesmagazine.nl/wp-content/uploads/2026/04/2026.BVG_.022-BOVAG-Duurzaam-Autoschadeherstel-v06-LoRes.pdf" target="_blank" rel="noopener">Manifest, 2026</a>). Wie twee tot zes weken op een herstelplek wacht, staat dus zonder auto en zonder leenauto. Geen verzekeraarszoeker toont wachttijd. Schadegarant geeft naam, adres, contactgegevens en een interne score, Centraal Beheer een sterrenscore en afstand (<a href="https://www.schadegarant.nl/wp-json/exchange/v1/bedrijven?schadetype=Carrosserie&merk=Volkswagen&plaats=Utrecht&sort=distance" target="_blank" rel="noopener">Schadegarant, voorbeeld Utrecht</a>; <a href="https://www.centraalbeheer.nl/verzekeringen/autoverzekering/herstellers-zoeken" target="_blank" rel="noopener">Centraal Beheer, herstellers zoeken</a>). De vraag welk bedrijf binnen het eigen netwerk het snelst kan helpen, laat sturing dus open.</p>
+<h2 id="zelf-vullen-kan-maar-niet-door-verzekeraarszoekers-leeg-te-trekken">Zelf vullen kan, maar niet door verzekeraarszoekers leeg te trekken</h2>
+<p>De basislijst van bedrijven is zonder hulp van de branche op te bouwen, maar geen enkele bron is tegelijk compleet, gratis en vrij herbruikbaar. De KvK is de breedste basis. Sinds 6 september 2025 geldt een nieuwe indeling van bedrijfsactiviteiten, waarin carrosserieherstel volgens dataverkoper CompanyData code 95315 heeft gekregen (voorheen 45204) (<a href="https://www.kvk.nl/pers/nieuwe-sbi-codes-van-kracht-in-het-kvk-handelsregister/" target="_blank" rel="noopener">KvK, 2025</a>; <a href="https://companydata.com/nl/sbi-code/sbi-code-95315/" target="_blank" rel="noopener">CompanyData</a>). CompanyData telt 2.756 registraties met die code, maar noemt elders 488 actieve autoschadeherstelbedrijven; dat verschil is niet verklaard en de ruis is groot (<a href="https://companydata.com/nl/bedrijven/nederland/autoschadeherstelbedrijven/" target="_blank" rel="noopener">CompanyData</a>). De KvK-koppeling kost €6,40 per maand plus €0,02 per opgevraagd profiel, dus ongeveer €60 voor 3.000 profielen; een selectie op code kun je per e-mail bestellen (<a href="https://developers.kvk.nl/pricing" target="_blank" rel="noopener">KvK, prijzen</a>; <a href="https://www.kvk.nl/producten-bestellen/kvk-handelsregister-adressen-offline/" target="_blank" rel="noopener">KvK, selecties</a>). OpenStreetMap bevat 304 herkenbare schadebedrijven, waarvan 182 met website, en valt onder een licentie die bij het mengen met eigen gegevens tot verplicht delen kan leiden (<a href="https://wiki.openstreetmap.org/wiki/Open_Data_License/Community_Guidelines" target="_blank" rel="noopener">OSM, richtlijnen</a>). Overture Places heeft per record een licentie, zodat je een vrij bruikbare set kunt maken door Foursquare-records te filteren of correct te vermelden (<a href="https://docs.overturemaps.org/guides/places" target="_blank" rel="noopener">Overture</a>). De ketens zijn het makkelijkst: ABS (85 vestigingen in een sitemap), Schadenet (115), Autoschade Herstel Groep (84), Van Mossel (26), Broekhuis (16), ASN en Hedin (elk 10) leveren samen ongeveer 330 vestigingen vóór ontdubbeling (<a href="https://www.absautoherstel.nl/vestigingen_post-sitemap.xml" target="_blank" rel="noopener">ABS</a>; <a href="https://www.schadenet.nl/vestigingen/" target="_blank" rel="noopener">Schadenet</a>; <a href="https://www.autoschadeherstelgroep.nl/onze-vestigingen/" target="_blank" rel="noopener">AHG</a>). Schadenet en AHG vragen 10 seconden tussen verzoeken, en ASN verbiedt het uitlezen van zijn afsprakentool (<a href="https://www.asnautoschade.nl/robots.txt" target="_blank" rel="noopener">ASN, robots.txt</a>). Google Places valt af als databron: namen, adressen en reviews opslaan is verboden, en in de EER mag Places-informatie sinds 8 juli 2025 niet op of naast welke kaart dan ook staan; alleen het place_id mag je onbeperkt bewaren (<a href="https://developers.google.com/maps/documentation/places/web-service/policies" target="_blank" rel="noopener">Google, beleid</a>; <a href="https://developers.google.com/maps/comms/eea/places" target="_blank" rel="noopener">Google, EER</a>).</p>
+<p>Bij de aansluiting bij verzekeraars zit het grootste juridische risico van het hele plan. Technisch is het eenvoudig: de zoeker van Schadegarant heeft een openbare datakoppeling die zonder inlog per bedrijf naam, KvK-nummer, adres, telefoon, e-mailadres, website en coördinaten teruggeeft (<a href="https://www.schadegarant.nl/wp-json/exchange/v1/bedrijven?schadetype=Carrosserie&merk=Overig&sort=name" target="_blank" rel="noopener">Schadegarant</a>). Maar in de zaak <em>Innoweb/Wegener</em> oordeelde het Europese Hof dat de autozoekmachine GasPedaal inbreuk maakte op het databankrecht van AutoTrack door die databank namens gebruikers te doorzoeken (<a href="https://www.scl.org/2984-database-right-innoweb-v-wegener-cjeu-judgment/" target="_blank" rel="noopener">SCL</a>). Zowel het reconstrueren van een netwerk als het live doorzoeken namens de gebruiker lijkt daar sterk op. Heeft een zoeker geen databankrecht, dan kan de eigenaar hergebruik nog steeds via zijn gebruiksvoorwaarden verbieden, zo bleek in <em>Ryanair/PR Aviation</em> (<a href="https://www.emerce.nl/cases/ryanair-mag-gebruik-vluchtgegevens-contractueel-beperken" target="_blank" rel="noopener">Emerce</a>). Of Schadegarant databankrecht heeft, hangt af van de investering in het verzamelen en controleren van de gegevens, niet van het afsluiten van de contracten zelf (<a href="https://www.ivir.nl/publicaties/download/948.pdf" target="_blank" rel="noopener">IViR, BHB-arresten</a>). De gebruiksvoorwaarden van de koppeling zijn niet gevonden, en de gegevens bevatten e-mailadressen van medewerkers, dus persoonsgegevens. De zoeker van Centraal Beheer is bovendien bewust uit zoekmachines gehouden (<a href="https://www.centraalbeheer.nl/verzekeringen/autoverzekering/herstellers-zoeken" target="_blank" rel="noopener">Centraal Beheer</a>). De veiligere route is aansluiting af te leiden uit wat bedrijven zelf publiceren (&quot;aangesloten bij Schadegarant&quot;, een Univé-vignet, de partnerpagina&#39;s van ASN, het lidmaatschap van AAS of ABS), elke vermelding te voorzien van bron en datum, en naast elk bedrijf een knop te zetten naar de officiële zoeker van de verzekeraar. Een handmatige steekproef van zo&#39;n 50 bedrijven per kwartaal via die zoekers meet hoe betrouwbaar dat is, zonder de databank te kopiëren.</p>
+<p>Voor de wachttijd bestaat geen publieke bron, dus die moet de oprichter zelf meten. Meldingen van gebruikers zijn de kern: twee tot vier weken na een zoekactie vragen hoeveel dagen er zaten tussen het eerste contact en de afspraak, en of er een leenauto was, en dat tonen als mediaan met aantal meldingen en periode. Een belronde als &quot;mystery shopper&quot; kan een startwaarde leveren, maar wordt snel duur: 2.000 bedrijven één keer per kwartaal bellen is naar schatting 55 uur per maand, of €850 tot 1.400 per maand uitbesteed, terwijl een wachttijd na enkele weken alweer veranderd is. Een enkele vraag als &quot;wanneer kan ik langskomen?&quot; is geen telemarketing, maar wie in hetzelfde gesprek het platform aanbiedt, heeft sinds 1 juli 2026 vooraf toestemming nodig van eenmanszaken en andere (mogelijke) klanten (<a href="https://www.kvk.nl/over-kvk/direct-marketing-en-regelgeving/" target="_blank" rel="noopener">KvK, direct marketing</a>). Een AI-belbot moet sinds 2 augustus 2026 melden dat hij een AI is (<a href="https://www.houthoff.com/insights/news/ai-act-transparency-obligations-and-the-ai-omnibus-regulation/" target="_blank" rel="noopener">Houthoff</a>), en krijgt dan waarschijnlijk andere antwoorden dan een echte klant. Google&#39;s drukte-informatie zit niet in de API en Google-reviews mogen niet worden opgeslagen (<a href="https://developers.google.com/maps/documentation/places/web-service/policies" target="_blank" rel="noopener">Google, beleid</a>). Openbare Microsoft Bookings-agenda&#39;s zijn technisch uit te lezen, maar komen bij maar 2 van de 41 zelfstandigen voor, gaan over de intake en niet over de reparatie, en de voorwaarden daarvan zijn niet onderzocht.</p>
+<p>Vervangend vervoer vraagt twee lagen: het recht dat de verzekeraar geeft (uit de regeltabel) en wat het bedrijf zelf aanbiedt (uit de eigen site). Voor die tweede laag is een eigen crawler, een programma dat bedrijfssites langsloopt, met een taalmodel de goedkoopste aanpak. Per bedrijf haalt het model gestructureerde velden op (leenauto ja of nee, kosten, type auto, fiets, haal- en brengservice, online afspraak, inloopuren, merkerkenning), elk met een letterlijk citaat en de URL als bewijs, en het systeem wijst velden af waarvan het citaat niet op de pagina staat. Voor 2.000 bedrijven met elk vier relevante pagina&#39;s kost één volledige ronde naar schatting <strong>$1,90 met Haiku 5.5</strong> of <strong>$38 met Sonnet 5.5</strong>, beide via de batchdienst met 50 procent korting (<a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Claude, prijzen</a>). De echte kosten zitten in handwerk en controle, niet in rekenkracht. Tekst- en datamining op openbaar toegankelijke sites is toegestaan zolang de eigenaar dat niet machineleesbaar heeft uitgesloten (<a href="https://www.kvan.nl/wp-content/uploads/2026/04/Kennisdocument-KVAN-Tekst-en-Datamining-in-de-Auteurswet.pdf" target="_blank" rel="noopener">KVAN, 2026</a>). Daarom: robots.txt respecteren, alleen feiten opslaan en geen teksten of foto&#39;s overnemen.</p>
+<p>De grens van de AVG ligt bij eenmanszaken. Gegevens van een bv zijn geen persoonsgegevens, maar die van de eigenaar van een eenmanszaak wel, en een bedrijfsadres dat ook het woonadres is, mag niet zomaar gepubliceerd worden (<a href="https://www.kvk.nl/over-kvk/veelgestelde-vragen-over-privacy-en-het-handelsregister/" target="_blank" rel="noopener">KvK, privacy</a>). Een Belgisch precedent laat zien hoe de afweging uitvalt. De privacytoezichthouder beboette een platform dat zonder toestemming gegevens van zorgverleners publiceerde, maar de rechter vernietigde die boete in september 2025 omdat de afweging van het gerechtvaardigd belang onvoldoende was gemaakt; het telt mee of de gegevens neutraal worden getoond (<a href="https://legalnews.be/handel-consument/mag-een-online-platform-mijn-professionele-gegevens-publiceren-zonder-toestemming-everest/" target="_blank" rel="noopener">Legalnews.be</a>). Praktisch betekent dat: geen eigenaarsnamen, bij een eenmanszaak op een woonadres alleen plaats of wijk zolang het bedrijf het adres niet zelf als bedrijfsadres publiceert, een vastgelegde belangenafweging, en een eenvoudig formulier voor correctie en bezwaar. De ACM eist dat betaalde resultaten herkenbaar zijn en dat duidelijk is hoe reviews tot stand komen (<a href="https://www.acm.nl/system/files/documents/leidraad-bescherming-online-consument-2024.pdf" target="_blank" rel="noopener">ACM, Leidraad 2024</a>; <a href="https://www.acm.nl/nl/verkoop-aan-consumenten/reclame-en-verleiden/online-beinvloeden/reviews-en-beoordelingen-gebruiken" target="_blank" rel="noopener">ACM, reviews</a>). Een pagina &quot;Hoe wij sorteren&quot; hoort er daarom vanaf de eerste dag bij. Het minst zichtbare risico is een onjuiste negatieve vermelding, zoals &quot;niet aangesloten bij X&quot; of &quot;lange wachttijd&quot;, die een bedrijf omzet kost. Bronlabels, data en een snelle correctie zijn daar de beste verdediging.</p>
+<h2 id="het-idee-een-schadewijzer-die-bij-je-polis-begint">Het idee: een schadewijzer die bij je polis begint</h2>
+<h3 id="kernconcept-een-vertaler-van-voorwaarden-plus-een-wachttijdmeter">Kernconcept: een vertaler van voorwaarden plus een wachttijdmeter</h3>
+<p>Het concept is geen zoveelste lijst met herstelbedrijven, maar een onafhankelijke schadewijzer die in vier korte vragen de situatie ophaalt (lease of eigen auto, schuldvraag, verzekeraar en dekking, ruit of carrosserie en merk) en daarna een persoonlijke route toont. Eerst: &quot;Je verzekeraar werkt met netwerk X. Herstel je daarbuiten, dan betaal je volgens de openbare voorwaarden (versie, datum) €Y extra en vervalt je recht op een leenauto. Vervangend vervoer geldt alleen tijdens de reparatie, niet tijdens het wachten.&quot; Daaronder staan de herstellers in de buurt, gesorteerd op afstand, met per bedrijf een label voor de aansluiting bij jouw netwerk, wat het bedrijf zelf aan vervoer biedt en wat gebruikers melden over de wachttijd.</p>
+<p>Het onderscheid zit in vier dingen die niemand anders combineert. De wijzer vergelijkt over alle netwerken heen, terwijl elke verzekeraarszoeker alleen het eigen netwerk toont. Hij praat in euro&#39;s en dagen in plaats van &quot;wij werken voor alle verzekeraars&quot;, en de Kifid-zaak van €500 is daarbij het marketingverhaal (<a href="https://www.kifid.nl/media/ztkpzdbm/uitspraak-2026-0813-bindend.pdf" target="_blank" rel="noopener">Kifid 2026-0813</a>). Hij meet de wachttijd, het enige gegeven dat nergens bestaat. En hij filtert op merk en elektrische auto&#39;s, waar het herstelnetwerk achterloopt. Tegenover Google&#39;s AI-overzicht positioneert de wijzer zich als de controleerbare bron: elk feit gedateerd, met herkomst. De beste startvorm is een website en geen app. Een schade overkomt iemand eens in de zoveel jaar, onder stress, en begint bijna altijd met een Google-zoekopdracht; pagina&#39;s per plaats en per verzekeraar (&quot;schadehersteller [plaats] aangesloten bij [verzekeraar]&quot;) vangen dat verkeer. Een Expo-app heeft pas zin als er een reden is om terug te komen, zoals een schadedossier dat je tot de reparatie volgt.</p>
+<h3 id="zo-beantwoordt-de-wijzer-de-drie-vragen">Zo beantwoordt de wijzer de drie vragen</h3>
+<div class="tabel"><table><thead><tr>
+<th>Vraag</th>
+<th>Wat de gebruiker ziet</th>
+<th>Waar het vandaan komt</th>
+<th>Wat de wijzer níet belooft</th>
+</tr>
+</thead><tbody><tr>
+<td>1. Valt het onder mijn polis, is dit bedrijf aangesloten?</td>
+<td>Netwerk van de verzekeraar, wat herstel daarbuiten kost (bijv. &quot;€600 extra&quot;), vrije-keuze-optie ja of nee; per bedrijf &quot;in netwerk X volgens eigen site, gezien op [datum]&quot; of &quot;onbekend&quot;, met knop naar de officiële zoeker</td>
+<td>Regeltabel uit openbare polisvoorwaarden; aansluiting uit bedrijfssites, partnerpagina&#39;s van ketens en netwerklidmaatschap</td>
+<td>Geen oordeel &quot;gedekt&quot; of &quot;niet gedekt&quot;; het polisblad en de verzekeraar blijven leidend</td>
+</tr>
+<tr>
+<td>2. Hoe snel kan ik terecht?</td>
+<td>Mediaan wachttijd uit meldingen (&quot;6 dagen, 9 meldingen, laatste 90 dagen&quot;), inloopuren, online intake, dagherstel voor kleine schade; later de eerstvolgende intake die het bedrijf zelf opgeeft, die na 30 dagen vervalt</td>
+<td>Gebruikers, bedrijfssites, een eenmalige belronde, later bedrijfsprofielen</td>
+<td>Geen live beschikbaarheid; een intake is niet de start van het herstel</td>
+</tr>
+<tr>
+<td>3. Is er fatsoenlijk vervangend vervoer?</td>
+<td>Recht via de verzekeraar (dagen, alleen tijdens reparatie, niet bij ruit) naast het aanbod van het bedrijf (auto, automaat, elektrisch, fiets, haal en breng, kosten) en meldingen &quot;kreeg je een leenauto?&quot;</td>
+<td>Regeltabel, extractie van bedrijfssites, gebruikers</td>
+<td>&quot;Gratis&quot; alleen als dat uit de voorwaarden van de verzekeraar volgt</td>
+</tr>
+</tbody></table></div>
+<h3 id="mvp-een-regio-een-website-nul-afhankelijkheid-van-schadebedrijven">MVP: één regio, één website, nul afhankelijkheid van schadebedrijven</h3>
+<p>De eerste versie is een Next.js-website met Postgres en een crawler als aparte dienst op Railway, eerst voor één regio. Arnhem-Nijmegen ligt voor de hand, met 100 tot 150 bedrijven. De onderzoekers stellen die regio zelf voor, en de notities bevatten er al uitgewerkte voorbeelden, van Autoschade Nijmegen (de enige site die op alle drie de vragen duidelijk was) tot Ambting en Autoschade Herstel Arnhem met hun genoemde netwerken en ATH in Duiven. De MVP bevat de beslishulp met vier vragen, de regeltabel voor de 20 grootste verzekeraarsmerken, bedrijfsprofielen met bronlabels, pagina&#39;s per plaats en per verzekeraar, een meldformulier voor wachttijd en vervoer (via een e-mail twee tot vier weken later, met toestemming), een formulier voor correctie en bezwaar, en de pagina &quot;Hoe wij sorteren&quot;. Bewust ontbreken: een app, accounts voor bedrijven, de verkoop van aanvragen, affiliate op verzekeringen en elke vorm van live beschikbaarheid. Een eventuele kaart draait op OpenStreetMap met eigen gegevens; Google wordt hooguit gebruikt via een opgeslagen place_id en een link &quot;bekijk reviews in Google Maps&quot;.</p>
+<h3 id="dataplan-in-vier-fasen-110-tot-190-uur-tot-landelijke-dekking">Dataplan in vier fasen: 110 tot 190 uur tot landelijke dekking</h3>
+<p>De uren hieronder zijn schattingen uit de notities en nog niet getoetst. De pilot is er juist om de werkelijke tijd per bedrijf en de nauwkeurigheid van het taalmodel te meten, voordat het landelijk wordt uitgerold. De bouw van de website zelf zit er niet in.</p>
+<div class="tabel"><table><thead><tr>
+<th>Fase</th>
+<th>Periode</th>
+<th>Wat</th>
+<th>Bronnen</th>
+<th>Uren (schatting)</th>
+<th>Kosten</th>
+</tr>
+</thead><tbody><tr>
+<td>0. Basis</td>
+<td>week 1-3</td>
+<td>Basislijst ontdubbelen op postcode en huisnummer, filteren op schadeherstel aan personenauto&#39;s, woonadressen van eenmanszaken markeren; regeltabel voor 20 tot 40 verzekeraarsmerken</td>
+<td>KvK (code 95315), OpenStreetMap, Overture, sitemaps van ketens, polisvoorwaarden</td>
+<td>40-60, waarvan 15-25 voor de regeltabel</td>
+<td>KvK €6,40 per maand + €0,02 per profiel (±€60 voor 3.000)</td>
+</tr>
+<tr>
+<td>1. Verrijking</td>
+<td>week 3-6</td>
+<td>Crawler en extractie: genoemde netwerken, vervangend vervoer en voorwaarden, haal en breng, online afspraak, inloopuren, merk- en EV-erkenning, openingstijden; elk veld met citaat, URL en datum</td>
+<td>Bedrijfssites, schema.org-gegevens</td>
+<td>30-50 bouwen</td>
+<td>±$2 per ronde (Haiku 5.5, batch); Railway enkele tientallen euro&#39;s per maand (niet nagerekend)</td>
+</tr>
+<tr>
+<td>2. Controle</td>
+<td>eenmalig</td>
+<td>Bedrijven zonder website met de hand opzoeken (2-3 minuten per stuk), 10 procent van de geëxtraheerde velden nalopen, vestigingslijsten van ketens controleren</td>
+<td>Handwerk</td>
+<td>40-80</td>
+<td>–</td>
+</tr>
+<tr>
+<td>3. Gebruikersdata</td>
+<td>vanaf maand 2</td>
+<td>Meldingen over wachttijd en vervoer, foutmeldingen, correcties; optioneel een belronde bij 100-200 bedrijven, zonder opname en zonder AI-belbot</td>
+<td>Gebruikers, belronde</td>
+<td>10-20 voor de belronde</td>
+<td>–</td>
+</tr>
+<tr>
+<td>4. Profiel claimen</td>
+<td>maand 4-6</td>
+<td>Bedrijf verifieert zich via KvK-nummer en een code naar het telefoonnummer of e-mailadres van de eigen site, en werkt wachttijd, vervoer en netwerken bij</td>
+<td>Bedrijven, vrijwillig</td>
+<td>niet geschat</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Onderhoud</td>
+<td>doorlopend</td>
+<td>Maandelijkse crawl met wijzigingsdetectie, KvK-wijzigingen per kwartaal, regeltabel 1-2 keer per jaar</td>
+<td>–</td>
+<td>10-20 per maand</td>
+<td>$1-5 per maand aan taalmodel; KvK-mutatieservice €1.279 per jaar optioneel</td>
+</tr>
+</tbody></table></div>
+<p>Eén harde regel komt uit de notities: een veld dat in de steekproef minder dan 90 procent juist blijkt, wordt niet getoond. Fase 4 is geen voorwaarde voor de lancering, maar de manier om later de wachttijd te verbeteren met gegevens van bedrijven die dat zelf willen. Zo blijft de wijzer onafhankelijk: bedrijven kunnen aanvullen, maar zonder hen werkt alles ook.</p>
+<h3 id="verdienmodel-eerst-verkeer-dan-bedrijven-laten-betalen">Verdienmodel: eerst verkeer, dan bedrijven laten betalen</h3>
+<p>Het eerste geld komt uit advertenties op de informatiepagina&#39;s, omdat daar geen medewerking voor nodig is; de opbrengst van advertenties in een smalle niche is wel beperkt. Affiliate op autoverzekeringen ligt voor de hand (overstappen na een slechte ervaring), maar wacht op het antwoord over de Wft. Affiliate met verzekeraars voor schadeherstel zelf is onwaarschijnlijk, omdat zij al sturen via eigen netwerken en platforms (<a href="https://www.centraalbeheer.nl/verzekeringen/autoverzekering/schadeherstelservice" target="_blank" rel="noopener">Centraal Beheer</a>). Het tweede model is een geclaimd of uitgelicht profiel voor bedrijven, naar analogie van FixMyCar met abonnementen vanaf £12,08 per maand, ofwel grofweg €10 tot 50 per maand (<a href="https://www.whocanfixmycar.com/for-garages/packages" target="_blank" rel="noopener">FixMyCar</a>). Dat werkt pas met aantoonbaar verkeer en vraagt een duidelijk label als advertentie. Het derde model is betalen per aanvraag of terugbelverzoek. De waarde van een schadeklus van ruim €2.000 rechtvaardigt meer dan de €6 tot 40 die Werkspot-vaklieden naar verluidt per aanvraag betalen (<a href="https://slimster.nl/blog/werkspot-alternatief/" target="_blank" rel="noopener">Slimster</a>), maar FixMyCar stapte juist af van vergoedingen per klus en RepairPal kreeg kritiek op uitblijvende aanvragen (<a href="https://www.am-online.com/news/fixmycar-scraps-per-job-garage-fees-for-subscriptions" target="_blank" rel="noopener">AM Online</a>; <a href="https://shopsuccess.repairpal.com/article/90-partner-referral-fee" target="_blank" rel="noopener">RepairPal</a>). Bovendien is een gestuurde klant geen vrije aanvraag. Het vierde en op termijn interessantste model is zakelijk: een wachttijdindex per regio voor pers, leasemaatschappijen of verzekeraars. Dat Fixico zijn geld in de zakelijke markt verdient, laat zien waar het geld zit (<a href="https://fixico.com/nl" target="_blank" rel="noopener">fixico.com/nl</a>). Publieke Nederlandse prijzen per aanvraag of klikprijzen voor schadetermen zijn niet gevonden; die moet de oprichter zelf opvragen.</p>
+<h3 id="de-grootste-risico-39-s-en-wat-ertegen-helpt">De grootste risico&#39;s en wat ertegen helpt</h3>
+<div class="tabel"><table><thead><tr>
+<th>Risico</th>
+<th>Waarom het speelt</th>
+<th>Wat de oprichter doet</th>
+</tr>
+</thead><tbody><tr>
+<td>Krimpende vrije-keuzemarkt</td>
+<td>Gestuurd deel van 60 naar 67-82 procent in 2030 (<a href="https://www.automotive-online.nl/management/2024/04/11/kpmg-aantal-schades-neemt-af-aandeel-gestuurde-schadestroom-stijgt/" target="_blank" rel="noopener">Automotive Online</a>)</td>
+<td>Mikken op de keuze binnen het eigen netwerk en op onverzekerde schade; in de pilot meten welk deel van de gebruikers echt kiest</td>
+</tr>
+<tr>
+<td>Verzekeraar wijst zelf de vestiging aan</td>
+<td>De branche wil digitale intake &quot;zodat er efficiënter kan worden gestuurd&quot; (<a href="https://aftersalesmagazine.nl/wp-content/uploads/2026/04/2026.BVG_.022-BOVAG-Duurzaam-Autoschadeherstel-v06-LoRes.pdf" target="_blank" rel="noopener">Manifest, 2026</a>)</td>
+<td>Snel en goedkoop toetsen; de wachttijddata is ook bruikbaar als het consumentendeel krimpt</td>
+</tr>
+<tr>
+<td>Google AI-overzichten en kaartblok</td>
+<td>Op 6 van 19 zoekpagina&#39;s vroeg het AI-overzicht zelf naar verzekering of vervoer (<a href="https://www.google.nl/search?q=schadeherstel+zwolle&hl=nl&gl=nl" target="_blank" rel="noopener">Google, Zwolle</a>)</td>
+<td>Gegevens bieden die Google niet heeft (euro&#39;s per verzekeraar, gemelde wachttijden), gedateerd en met bron</td>
+</tr>
+<tr>
+<td>Scrapen van verzekeraarszoekers</td>
+<td><em>Innoweb/Wegener</em> en <em>Ryanair</em>; de Schadegarant-koppeling bevat e-mailadressen van medewerkers (<a href="https://www.scl.org/2984-database-right-innoweb-v-wegener-cjeu-judgment/" target="_blank" rel="noopener">SCL</a>)</td>
+<td>Niet reconstrueren en niet live doorzoeken; doorlinken; Schadegarant eventueel om toestemming vragen</td>
+</tr>
+<tr>
+<td>AVG bij eenmanszaken</td>
+<td>Eigenaar en woonadres zijn persoonsgegevens (<a href="https://www.kvk.nl/over-kvk/veelgestelde-vragen-over-privacy-en-het-handelsregister/" target="_blank" rel="noopener">KvK</a>)</td>
+<td>Geen eigenaarsnamen, woonadres alleen als plaats, vastgelegde belangenafweging, bezwaarformulier</td>
+</tr>
+<tr>
+<td>Google Places-voorwaarden</td>
+<td>Opslaan verboden; in de EER niet naast een kaart (<a href="https://developers.google.com/maps/comms/eea/places" target="_blank" rel="noopener">Google, EER</a>)</td>
+<td>Alleen place_id bewaren; eigen bronnen en een OpenStreetMap-kaart</td>
+</tr>
+<tr>
+<td>Onjuiste vermelding</td>
+<td>Een fout kost een consument al snel €500 (<a href="https://www.kifid.nl/media/ztkpzdbm/uitspraak-2026-0813-bindend.pdf" target="_blank" rel="noopener">Kifid</a>) en een bedrijf omzet</td>
+<td>Bronlabel en datum bij elk feit, correctie binnen 5 werkdagen, nooit &quot;gedekt&quot; zeggen</td>
+</tr>
+<tr>
+<td>Te weinig meldingen</td>
+<td>Zonder meldingen geen wachttijd; per bedrijf komen er weinig binnen</td>
+<td>Aantal en periode altijd tonen; belronde als startwaarde; later profielen laten claimen</td>
+</tr>
+<tr>
+<td>Snel verouderende gegevens</td>
+<td>Werksta hernoemde in november 2026 alle vestigingen; FBTO wijzigt meerdere keren per jaar zijn voorwaarden (<a href="https://www.automotive-online.nl/management/schade/2026/11/05/laatste-drie-abs-vestigingen-in-nederland-gaan-nu-ook-verder-onder-naam-werksta/" target="_blank" rel="noopener">Automotive Online</a>; <a href="https://www.fbto.nl/-/media/documenten/auto/autoverzekering-met-bonus-malus-voorwaarden-1-december-2024-tot-1-december-2025.pdf" target="_blank" rel="noopener">FBTO</a>)</td>
+<td>Maandelijkse crawl met wijzigingsdetectie; versiedatum bij elke regel in de regeltabel</td>
+</tr>
+<tr>
+<td>Wft</td>
+<td>Niet onderzocht, zie hieronder</td>
+<td>Vóór de lancering juridisch laten toetsen</td>
+</tr>
+</tbody></table></div>
+<h3 id="open-punt-valt-de-polischeck-of-affiliate-onder-de-wft">Open punt: valt de polischeck of affiliate onder de Wft?</h3>
+<p>De notities laten één vraag liggen die het hele concept raakt: valt een &quot;valt het onder mijn polis&quot;-check, of affiliate op autoverzekeringen, onder de Wet op het financieel toezicht, met een AFM-vergunning als gevolg? Twee dingen moeten worden uitgezocht. Ten eerste of een beslishulp die per verzekeraar en dekking vertelt wat iemand kan verwachten, nog algemene informatie is, of al advies over een financieel product. Ten tweede of een vergoeding per doorverwijzing of per afgesloten autoverzekering, via een vergelijker of rechtstreeks via een verzekeraar, als bemiddeling telt, en of er een lichter regime bestaat voor alleen doorverwijzen. Het antwoord bepaalt zowel de formulering van de check als een van de verdienmodellen. De Kifid-zaak laat zien hoe zwaar de zorgplicht weegt voor partijen die wel als financiële dienstverlener gelden (<a href="https://www.kifid.nl/media/ztkpzdbm/uitspraak-2026-0813-bindend.pdf" target="_blank" rel="noopener">Kifid 2026-0813</a>). Tot er een antwoord ligt van een jurist met Wft-ervaring of van de AFM, is de veilige keuze: de check toont alleen openbare voorwaarden met bron en versiedatum, geeft geen oordeel &quot;gedekt&quot; of &quot;niet gedekt&quot;, verwijst altijd naar de verzekeraar, en de MVP bevat geen affiliate op verzekeringen.</p>
+<h3 id="eerste-stappen">Eerste stappen</h3>
+<div class="tabel"><table><thead><tr>
+<th>Wanneer</th>
+<th>Stap</th>
+<th>Waarom</th>
+</tr>
+</thead><tbody><tr>
+<td>Week 1</td>
+<td>Zoekvolume en klikprijzen opvragen in Google Keyword Planner voor termen als &quot;autoschade [plaats]&quot; en &quot;schadehersteller [verzekeraar]&quot;</td>
+<td>De notities vonden geen klik- of aanvraagprijzen; dit bepaalt of een verkeersmodel kan werken</td>
+</tr>
+<tr>
+<td>Week 1</td>
+<td>Eén adviesgesprek met een jurist over de Wft-vraag, het databankrecht en de belangenafweging voor eenmanszaken</td>
+<td>De drie juridische punten die de notities openlaten</td>
+</tr>
+<tr>
+<td>Week 1-2</td>
+<td>Regeltabel voor de 20 grootste verzekeraarsmerken uit openbare voorwaarden, met versie en bron-URL per regel</td>
+<td>Kern van vraag 1 en 3; 15-25 uur</td>
+</tr>
+<tr>
+<td>Week 2</td>
+<td>Schadegarant per e-mail vragen of en hoe hun zoekergegevens hergebruikt mogen worden</td>
+<td>Een ja maakt vraag 1 sterker voor 13 verzekeraars; een nee verandert het plan niet</td>
+</tr>
+<tr>
+<td>Week 2-4</td>
+<td>Pilotdataset Arnhem-Nijmegen (100-150 bedrijven): KvK, OpenStreetMap, Overture, crawl, extractie en handmatige controle</td>
+<td>Meet de echte tijd per bedrijf en de juistheid per veld</td>
+</tr>
+<tr>
+<td>Week 4-6</td>
+<td>Pilotsite live: beslishulp, plaats- en verzekeraarspagina&#39;s, profielen met bronlabels, meldformulier, correctieformulier, &quot;Hoe wij sorteren&quot;</td>
+<td>Eerste echte bezoekers en meldingen</td>
+</tr>
+<tr>
+<td>Week 5-8</td>
+<td>Belronde bij 50-100 pilotbedrijven als nulmeting van de wachttijd, zonder opname, zonder AI-belbot en zonder verkooppraatje</td>
+<td>Een startwaarde voordat er genoeg meldingen zijn</td>
+</tr>
+<tr>
+<td>Maand 3</td>
+<td>Besluiten over landelijke uitrol op basis van verkeer, aantal meldingen, datakwaliteit en het Wft-antwoord</td>
+<td>Pas dan de 110-190 uur voor fase 0-2 landelijk investeren</td>
+</tr>
+</tbody></table></div>
+<h2 id="conclusie">Conclusie</h2>
+<p>De oorspronkelijke opzet, een verzamelplek die informatie van herstellers bundelt, zoekt op de verkeerde plek. Twee van de drie antwoorden liggen bij verzekeraars en staan, verspreid maar openbaar, in polisvoorwaarden. Het product is daardoor minder een bedrijvengids dan een vertaler die voorwaarden omzet in een bedrag en een aantal dagen, plus een meter voor het enige gegeven dat niemand publiceert. Die wachttijdmeter is ook het enige bezit dat moeilijk te kopiëren is: een lijst bedrijven heeft Google al, en polisvoorwaarden kan iedereen lezen, maar honderden gedateerde meldingen over &quot;hoe snel kon je terecht&quot; heeft niemand. Daarom ligt een latere zakelijke route, met een wachttijdindex voor pers, lease en verzekeraars, meer voor de hand dan een advertentiemodel alleen.</p>
+<p>Sturing is minder een doodvonnis dan het lijkt. Ze bepaalt meestal het netwerk en niet de vestiging, en het vervangend vervoer dekt de wachttijd niet, dus &quot;welk bedrijf in mijn netwerk kan het snelst&quot; is precies de vraag die sturing openlaat. Dat venster sluit zodra verzekeraars via een digitale intake zelf de vestiging toewijzen, zoals de branche in 2026 aankondigde. De oprichter moet daarom snel en goedkoop toetsen in één regio, met twee harde beslismomenten: een juridisch antwoord op de Wft-vraag en een pilot die bewijst dat gebruikers echt wachttijden melden.</p>
+
+    </article>
+
+    <footer>
+      Onderzoek gedaan op 7 november 2026 met openbare bronnen: websites van schadebedrijven, polisvoorwaarden, vakpers en rechtspraak. Bij elke bewering staat de bron. Uren, kosten en marktcijfers zijn schattingen en nog niet getoetst in een pilot. Dit is geen juridisch advies.
+    </footer>
+  </main>
+</body>
+</html>
